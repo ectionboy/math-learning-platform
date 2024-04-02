@@ -42,7 +42,7 @@ import { useNavigate } from 'react-router-dom';
 
 const pages = ['Головна', 'Предмети', 'Про нас'];
 const pagesURL = {
-  'Головна': '',
+  'Головна': '/',
   'Предмети': '/subject',
   'Про нас': '/about',
 }
@@ -59,7 +59,8 @@ function Header() {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (page) => {
+    menuItemClick(page)
     setAnchorElNav(null);
   };
 
@@ -69,9 +70,13 @@ function Header() {
 
   const navigate = useNavigate();
 
-  const navTo = () => {
-    navigate("/")
+  const navTo = (to) => {
+    navigate(to)
   };
+  const menuItemClick = (item) => { 
+    const to = pagesURL[item];
+    navigate(to)
+  }
 
   return (
     <AppBar position="static">
@@ -82,7 +87,7 @@ function Header() {
             variant="h6"
             noWrap
             component="a"
-            onClick={navTo}
+            onClick={()=>navTo("/")}
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -126,7 +131,7 @@ function Header() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -137,7 +142,7 @@ function Header() {
             variant="h5"
             noWrap
             component="a"
-            onClick={navTo}
+            onClick={()=>navTo("/")}
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -155,7 +160,7 @@ function Header() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => handleCloseNavMenu(page)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
