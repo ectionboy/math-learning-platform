@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/math-learning-platform/static/css/main.7acaea2f.css",
-    "main.js": "/math-learning-platform/static/js/main.f6d79a42.js",
+    "main.js": "/math-learning-platform/static/js/main.9418f6f0.js",
     "index.html": "/math-learning-platform/index.html",
     "main.7acaea2f.css.map": "/math-learning-platform/static/css/main.7acaea2f.css.map",
-    "main.f6d79a42.js.map": "/math-learning-platform/static/js/main.f6d79a42.js.map"
+    "main.9418f6f0.js.map": "/math-learning-platform/static/js/main.9418f6f0.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.f6d79a42.js"
+    "static/js/main.9418f6f0.js"
   ]
 }
