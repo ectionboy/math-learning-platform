@@ -7,13 +7,19 @@ import {
   TitleEl,
 } from './Title.styled';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Title = () => {
+    const navigate = useNavigate();
+
+    const navTo = (to) => {
+      navigate(to)
+    };
   return (
     <ContainerStyled>
       <TitleContainer>
         <TitleEl>Math learning platform </TitleEl>
-        <Button variant="contained" sx={{ backgroundColor: '#2eacff' }}>
+        <Button variant="contained" onClick={()=>navTo("/subject")} sx={{ backgroundColor: '#2eacff' }}>
           Почнімо
         </Button>
       </TitleContainer>
