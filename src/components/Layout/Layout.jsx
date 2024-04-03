@@ -7,7 +7,35 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <Container maxWidth="xl">
+      <Container
+        maxWidth="xl"
+        sx={{
+          pt: '20px',
+          pb: '20px',
+          xs: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            maxWidth: '375px',
+            margin: ' 0 auto',
+            width: '100%',
+            height: 'auto',
+            paddingLeft: '20px',
+            paddingRight: '20px',
+            gap: '50px',
+          },
+          sm: {
+            maxWidth: '600px',
+            paddingLeft: '32px',
+            paddingRight: '32px',
+          },
+          xl: {
+            maxWidth: '1440px',
+            paddingLeft: '128px',
+            paddingRight: '128px',
+          },
+        }}
+      >
         {children}
       </Container>
       <Footer />
